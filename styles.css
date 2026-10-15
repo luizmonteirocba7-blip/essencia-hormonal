@@ -315,7 +315,7 @@ html.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 420px) {
   .wrap { width: min(var(--wrap),calc(100% - 32px)); }
   .hero-visual { height: clamp(280px,75vw,320px); min-height: clamp(280px,75vw,320px); }
-  .hero-copy { padding-top: 30px; padding-bottom: 28px; }
+  .hero-copy { padding-top: 0; padding-bottom: 28px; }
   .hero-copy h1 { font-size: clamp(1.85rem,8.6vw,2.2rem); line-height: 1.08; }
   .hero-lead { font-size: 1.42rem; }
   .hero-proof { align-items: flex-start; }
