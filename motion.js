@@ -3,6 +3,7 @@
   var reduceMotion = motionPreference.matches;
   var waveArt = document.querySelector('.hero-waves');
   var portraitLeaves = document.querySelector('.portrait-leaves');
+  var heroVideo = document.querySelector('.hero-background-video');
   var menuButton = document.querySelector('.menu-toggle');
   var menu = document.querySelector('#primary-nav');
 
@@ -14,9 +15,23 @@
     });
   }
 
+  function syncHeroVideo() {
+    if (!heroVideo) return;
+    if (motionPreference.matches || document.hidden) {
+      heroVideo.pause();
+      return;
+    }
+    var playback = heroVideo.play();
+    if (playback && typeof playback.catch === 'function') playback.catch(function () {});
+  }
+
   syncWaveMotion();
+  syncHeroVideo();
   if (motionPreference.addEventListener) motionPreference.addEventListener('change', syncWaveMotion);
   else if (motionPreference.addListener) motionPreference.addListener(syncWaveMotion);
+  if (motionPreference.addEventListener) motionPreference.addEventListener('change', syncHeroVideo);
+  else if (motionPreference.addListener) motionPreference.addListener(syncHeroVideo);
+  document.addEventListener('visibilitychange', syncHeroVideo);
 
   function closeMenu() {
     if (!menuButton || !menu) return;
