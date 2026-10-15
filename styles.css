@@ -253,7 +253,7 @@ html.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .hero-grid { display: flex; min-height: 0; flex-direction: column; align-items: stretch; gap: 0; }
   .hero-visual { order: 0; height: 370px; min-height: 370px; margin: 0 5px; }
   .hero-photo-frame { border-radius: 0; }
-  .hero-photo-frame img { right: -15%; bottom: -18px; height: calc(100% + 18px); object-position: right bottom; }
+  .hero-photo-frame img { right: -15%; bottom: 0; height: 100%; object-position: right bottom; }
   .hero-copy { order: 1; padding: 51px 0 35px; }
   .hero-copy .eyebrow { margin-bottom: 16px; font-size: .63rem; }
   h1 { font-size: clamp(2.55rem,10vw,3.8rem); }
@@ -314,7 +314,7 @@ html.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 420px) {
   .wrap { width: min(var(--wrap),calc(100% - 32px)); }
-  .hero-visual { height: 330px; min-height: 330px; }
+  .hero-visual { height: 350px; min-height: 350px; }
   .hero-proof { align-items: flex-start; }
   .signals { gap: 8px; }
   .signal { min-height: 97px; }
