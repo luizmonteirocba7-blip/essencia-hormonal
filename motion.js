@@ -1,19 +1,9 @@
 (function () {
   var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   var reduceMotion = motionPreference.matches;
-  var waveArt = document.querySelector('.hero-waves');
-  var portraitLeaves = document.querySelector('.portrait-leaves');
   var heroVideo = document.querySelector('.hero-background-video');
   var menuButton = document.querySelector('.menu-toggle');
   var menu = document.querySelector('#primary-nav');
-
-  function syncWaveMotion() {
-    [waveArt, portraitLeaves].forEach(function (art) {
-      if (!art || typeof art.pauseAnimations !== 'function') return;
-      if (motionPreference.matches) art.pauseAnimations();
-      else art.unpauseAnimations();
-    });
-  }
 
   function syncHeroVideo() {
     if (!heroVideo) return;
@@ -25,10 +15,7 @@
     if (playback && typeof playback.catch === 'function') playback.catch(function () {});
   }
 
-  syncWaveMotion();
   syncHeroVideo();
-  if (motionPreference.addEventListener) motionPreference.addEventListener('change', syncWaveMotion);
-  else if (motionPreference.addListener) motionPreference.addListener(syncWaveMotion);
   if (motionPreference.addEventListener) motionPreference.addEventListener('change', syncHeroVideo);
   else if (motionPreference.addListener) motionPreference.addListener(syncHeroVideo);
   document.addEventListener('visibilitychange', syncHeroVideo);
