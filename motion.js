@@ -1,7 +1,19 @@
 (function () {
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduceMotion = motionPreference.matches;
+  var waveArt = document.querySelector('.hero-waves');
   var menuButton = document.querySelector('.menu-toggle');
   var menu = document.querySelector('#primary-nav');
+
+  function syncWaveMotion() {
+    if (!waveArt || typeof waveArt.pauseAnimations !== 'function') return;
+    if (motionPreference.matches) waveArt.pauseAnimations();
+    else waveArt.unpauseAnimations();
+  }
+
+  syncWaveMotion();
+  if (motionPreference.addEventListener) motionPreference.addEventListener('change', syncWaveMotion);
+  else if (motionPreference.addListener) motionPreference.addListener(syncWaveMotion);
 
   function closeMenu() {
     if (!menuButton || !menu) return;

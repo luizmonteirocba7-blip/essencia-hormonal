@@ -35,6 +35,32 @@
   <main id="conteudo">
     <section class="hero">
       <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <svg class="hero-waves" viewBox="0 0 1600 740" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="wave-teal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#24666a" stop-opacity="0"/><stop offset=".22" stop-color="#24666a" stop-opacity=".58"/><stop offset=".72" stop-color="#123f45" stop-opacity=".66"/><stop offset="1" stop-color="#123f45" stop-opacity="0"/></linearGradient>
+          <linearGradient id="wave-sage" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8bb9aa" stop-opacity="0"/><stop offset=".3" stop-color="#8bb9aa" stop-opacity=".7"/><stop offset=".8" stop-color="#24666a" stop-opacity=".42"/><stop offset="1" stop-color="#24666a" stop-opacity="0"/></linearGradient>
+          <linearGradient id="wave-gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c7ad75" stop-opacity="0"/><stop offset=".5" stop-color="#c7ad75" stop-opacity=".65"/><stop offset="1" stop-color="#c7ad75" stop-opacity="0"/></linearGradient>
+          <filter id="wave-glow" x="-20%" y="-100%" width="140%" height="300%"><feGaussianBlur stdDeviation="5"/></filter>
+        </defs>
+        <g class="wave-layer wave-layer-back">
+          <path class="wave-glow" d="M-160 498 C120 390 250 570 490 460 S850 340 1080 455 S1430 565 1760 410"/>
+          <path class="wave-line wave-line-sage" d="M-160 498 C120 390 250 570 490 460 S850 340 1080 455 S1430 565 1760 410"/>
+          <path class="wave-line wave-line-gold" d="M-140 557 C90 475 260 620 510 525 S850 408 1110 510 S1450 620 1770 474"/>
+        </g>
+        <g class="wave-layer wave-layer-front">
+          <path class="wave-glow" d="M-170 382 C100 505 260 330 510 415 S840 525 1090 405 S1430 315 1770 435"/>
+          <path class="wave-line wave-line-teal" d="M-170 382 C100 505 260 330 510 415 S840 525 1090 405 S1430 315 1770 435"/>
+          <path class="wave-line wave-line-sage" d="M-160 624 C100 535 260 700 520 598 S870 498 1110 600 S1470 694 1780 572"/>
+        </g>
+        <g class="wave-particles">
+          <circle r="3.2" class="wave-particle particle-teal"><animateMotion dur="21s" repeatCount="indefinite" path="M-170 382 C100 505 260 330 510 415 S840 525 1090 405 S1430 315 1770 435"/></circle>
+          <circle r="2.3" class="wave-particle particle-sage"><animateMotion dur="27s" begin="-8s" repeatCount="indefinite" path="M-160 498 C120 390 250 570 490 460 S850 340 1080 455 S1430 565 1760 410"/></circle>
+          <circle r="2.6" class="wave-particle particle-gold"><animateMotion dur="24s" begin="-14s" repeatCount="indefinite" path="M-140 557 C90 475 260 620 510 525 S850 408 1110 510 S1450 620 1770 474"/></circle>
+          <circle r="1.8" class="wave-particle particle-teal"><animateMotion dur="31s" begin="-19s" repeatCount="indefinite" path="M-160 624 C100 535 260 700 520 598 S870 498 1110 600 S1470 694 1780 572"/></circle>
+          <circle cx="1190" cy="382" r="3.3" class="wave-twinkle"><animate attributeName="opacity" values=".18;.72;.24" dur="4.8s" repeatCount="indefinite"/></circle>
+          <circle cx="735" cy="455" r="2.4" class="wave-twinkle"><animate attributeName="opacity" values=".16;.58;.2" dur="6.2s" begin="-2s" repeatCount="indefinite"/></circle>
+        </g>
+      </svg>
       <div class="hero-grid wrap">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Saúde integral da mulher <span class="eyebrow-divider">·</span> Cuiabá</p>

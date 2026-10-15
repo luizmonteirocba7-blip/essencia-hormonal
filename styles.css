@@ -52,6 +52,22 @@ h3 { line-height: 1.25; }
 .hero-orbit { position: absolute; z-index: -1; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 7px rgba(199,173,117,.13); animation: orbit-float 7s ease-in-out infinite; }
 .orbit-one { top: 25%; right: 13%; }
 .orbit-two { right: 42%; bottom: 19%; width: 6px; height: 6px; animation-delay: -3s; }
+.hero-waves { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; opacity: .78; mask-image: linear-gradient(180deg,transparent 5%,rgba(0,0,0,.38) 31%,#000 62%,rgba(0,0,0,.8) 100%); }
+.wave-layer { transform-box: fill-box; transform-origin: center; }
+.wave-layer-back { animation: wave-drift-back 29s ease-in-out infinite alternate; }
+.wave-layer-front { animation: wave-drift-front 23s ease-in-out infinite alternate; }
+.wave-line, .wave-glow { fill: none; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.wave-line { stroke-dasharray: 920 22 2 58; animation: wave-flow 38s linear infinite; }
+.wave-line-teal { stroke: url(#wave-teal); stroke-width: 1.25; opacity: .48; }
+.wave-line-sage { stroke: url(#wave-sage); stroke-width: 1.15; opacity: .48; }
+.wave-line-gold { stroke: url(#wave-gold); stroke-width: 1; opacity: .32; }
+.wave-glow { stroke: #69a79c; stroke-width: 7; opacity: .11; filter: url(#wave-glow); }
+.wave-particle { filter: drop-shadow(0 0 5px currentColor); }
+.particle-teal { fill: #24666a; color: #24666a; }
+.particle-sage { fill: #8bb9aa; color: #8bb9aa; }
+.particle-gold { fill: #c7ad75; color: #c7ad75; }
+.wave-twinkle { fill: #c7ad75; filter: drop-shadow(0 0 5px rgba(199,173,117,.68)); }
+.hero-grid, .hero-bottom { position: relative; z-index: 1; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(40px,6vw,88px); min-height: 620px; }
 .hero-copy { position: relative; z-index: 2; padding: 38px 0 56px; animation: rise-in .75s cubic-bezier(.2,.7,.25,1) both; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 19px; color: var(--teal); font-size: .72rem; font-weight: 800; letter-spacing: .15em; line-height: 1.45; text-transform: uppercase; }
@@ -219,6 +235,9 @@ html.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes soft-in { from { opacity: .65; } to { opacity: 1; } }
 @keyframes orbit-float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(8deg); } }
+@keyframes wave-flow { to { stroke-dashoffset: -1002px; } }
+@keyframes wave-drift-back { from { transform: translate(0,0); } to { transform: translate(15px,-9px); } }
+@keyframes wave-drift-front { from { transform: translate(0,0); } to { transform: translate(-12px,8px); } }
 @media (max-width: 1050px) {
   .hero-grid { gap: 42px; min-height: 570px; }
   .hero-visual { min-height: 535px; }
@@ -246,6 +265,11 @@ html.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .primary-nav > a:not(.nav-cta) { padding: 13px 3px; border-bottom: 1px solid var(--line); font-size: .95rem; }
   .nav-cta { justify-content: center; margin-top: 13px; }
   .hero { padding-top: 18px; }
+  .hero-waves { bottom: auto; height: 430px; opacity: .61; mask-image: linear-gradient(180deg,rgba(0,0,0,.06),#000 30%,#000 78%,rgba(0,0,0,.35)); }
+  .wave-layer-back { display: none; }
+  .wave-twinkle:nth-last-child(-n+2) { display: none; }
+  .wave-line { stroke-dasharray: 1100 28 2 72; }
+  .hero-orbit { opacity: .65; }
   .hero-grid { display: flex; min-height: 0; flex-direction: column; align-items: stretch; gap: 0; }
   .hero-visual { order: 0; min-height: 370px; margin: 0 5px; }
   .hero-photo-frame { border-radius: 44% 44% 18px 18px / 35% 35% 18px 18px; }
@@ -329,4 +353,6 @@ html.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   html.motion-ready .reveal { opacity: 1; transform: none; }
+  .hero-waves .wave-layer, .hero-waves .wave-line { animation: none !important; }
+  .hero-waves .wave-particles { visibility: hidden; }
 }
