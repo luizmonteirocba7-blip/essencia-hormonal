@@ -82,8 +82,8 @@ h3 { line-height: 1.25; }
 .hero-visual { position: relative; min-height: 650px; align-self: stretch; animation: soft-in 1s ease-out both; }
 .hero-photo-frame { position: absolute; z-index: 1; inset: 0; overflow: visible; border-radius: 0; background: transparent; }
 .hero-photo-frame::after { display: none; }
-.hero-photo-frame img { position: absolute; right: -35%; bottom: 0; width: auto; max-width: none; height: 100%; object-fit: contain; object-position: right bottom; filter: drop-shadow(0 24px 38px rgba(0,0,0,.24)); }
-.hero-bottom { display: flex; justify-content: space-between; padding: 17px 0 3px; color: #b7c8bd; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.hero-photo-frame img { position: absolute; right: -35%; bottom: -56px; width: auto; max-width: none; height: calc(100% + 56px); object-fit: contain; object-position: right bottom; filter: drop-shadow(0 24px 38px rgba(0,0,0,.24)); }
+.hero-bottom { display: flex; justify-content: flex-start; gap: 32px; padding: 17px 0 3px; color: #b7c8bd; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .scroll-cue { display: inline-flex; align-items: center; gap: 9px; }
 .scroll-cue span { width: 7px; height: 7px; border: 1px solid #9dc9ad; border-radius: 50%; }
 .molecule { position: absolute; width: 108px; height: 108px; border: 1px solid rgba(36,102,106,.38); border-radius: 50%; animation: orbit-float 9s ease-in-out infinite; }
@@ -223,6 +223,7 @@ html.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 1050px) {
   .hero-grid { gap: 42px; min-height: 570px; }
   .hero-visual { min-height: 570px; }
+  .scroll-cue { display: none; }
   .care-grid { grid-template-columns: repeat(2,1fr); }
   .care-card { min-height: 230px; }
   .doctor-card { grid-template-columns: .75fr 1.25fr; }
