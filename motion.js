@@ -2,6 +2,8 @@
   var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   var reduceMotion = motionPreference.matches;
   var heroVideo = document.querySelector('.hero-background-video');
+  var heroVisual = document.querySelector('.hero-visual');
+  var mobileCta = document.querySelector('.mobile-cta');
   var menuButton = document.querySelector('.menu-toggle');
   var menu = document.querySelector('#primary-nav');
 
@@ -19,6 +21,22 @@
   if (motionPreference.addEventListener) motionPreference.addEventListener('change', syncHeroVideo);
   else if (motionPreference.addListener) motionPreference.addListener(syncHeroVideo);
   document.addEventListener('visibilitychange', syncHeroVideo);
+
+  function syncMobileCta() {
+    if (!mobileCta || !heroVisual) return;
+    if (!window.matchMedia('(max-width: 760px)').matches) {
+      mobileCta.classList.remove('is-hidden');
+      return;
+    }
+    var visualBounds = heroVisual.getBoundingClientRect();
+    var ctaBounds = mobileCta.getBoundingClientRect();
+    var overlapsPortrait = visualBounds.top < window.innerHeight && visualBounds.bottom > ctaBounds.top;
+    mobileCta.classList.toggle('is-hidden', overlapsPortrait);
+  }
+
+  syncMobileCta();
+  window.addEventListener('scroll', syncMobileCta, { passive: true });
+  window.addEventListener('resize', syncMobileCta);
 
   function closeMenu() {
     if (!menuButton || !menu) return;
