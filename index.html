@@ -37,28 +37,41 @@
       <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
       <svg class="hero-waves" viewBox="0 0 1600 740" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
         <defs>
-          <linearGradient id="wave-teal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#24666a" stop-opacity="0"/><stop offset=".22" stop-color="#24666a" stop-opacity=".58"/><stop offset=".72" stop-color="#123f45" stop-opacity=".66"/><stop offset="1" stop-color="#123f45" stop-opacity="0"/></linearGradient>
-          <linearGradient id="wave-sage" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8bb9aa" stop-opacity="0"/><stop offset=".3" stop-color="#8bb9aa" stop-opacity=".7"/><stop offset=".8" stop-color="#24666a" stop-opacity=".42"/><stop offset="1" stop-color="#24666a" stop-opacity="0"/></linearGradient>
-          <linearGradient id="wave-gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c7ad75" stop-opacity="0"/><stop offset=".5" stop-color="#c7ad75" stop-opacity=".65"/><stop offset="1" stop-color="#c7ad75" stop-opacity="0"/></linearGradient>
+          <linearGradient id="wave-teal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#24666a" stop-opacity="0"/><stop offset=".32" stop-color="#69a991" stop-opacity="0"/><stop offset=".48" stop-color="#69a991" stop-opacity=".78"/><stop offset=".72" stop-color="#a6d3aa" stop-opacity=".92"/><stop offset="1" stop-color="#123f45" stop-opacity="0"/></linearGradient>
+          <linearGradient id="wave-sage" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8bb9aa" stop-opacity="0"/><stop offset=".32" stop-color="#a7d9b2" stop-opacity="0"/><stop offset=".48" stop-color="#a7d9b2" stop-opacity=".78"/><stop offset=".78" stop-color="#3f8c72" stop-opacity=".92"/><stop offset="1" stop-color="#24666a" stop-opacity="0"/></linearGradient>
+          <linearGradient id="wave-gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c7ad75" stop-opacity="0"/><stop offset=".34" stop-color="#d2b86f" stop-opacity="0"/><stop offset=".5" stop-color="#d2b86f" stop-opacity=".84"/><stop offset=".78" stop-color="#f0d993" stop-opacity="1"/><stop offset="1" stop-color="#c7ad75" stop-opacity="0"/></linearGradient>
+          <linearGradient id="leaf-green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b1d6a2"/><stop offset="1" stop-color="#3f8060"/></linearGradient>
+          <linearGradient id="leaf-gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0d993"/><stop offset="1" stop-color="#b9964e"/></linearGradient>
+          <linearGradient id="wave-mask-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="0"><stop stop-color="#fff" stop-opacity=".06"/><stop offset=".28" stop-color="#fff" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity=".64"/><stop offset=".65" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity=".18"/></linearGradient>
+          <mask id="wave-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="740"><rect width="1600" height="740" fill="url(#wave-mask-gradient)"/></mask>
           <filter id="wave-glow" x="-20%" y="-100%" width="140%" height="300%"><feGaussianBlur stdDeviation="5"/></filter>
         </defs>
-        <g class="wave-layer wave-layer-back">
+        <g class="wave-layer wave-layer-back" mask="url(#wave-mask)">
           <path class="wave-glow" d="M-160 498 C120 390 250 570 490 460 S850 340 1080 455 S1430 565 1760 410"/>
           <path class="wave-line wave-line-sage" d="M-160 498 C120 390 250 570 490 460 S850 340 1080 455 S1430 565 1760 410"/>
+          <path class="wave-line wave-line-gold wave-line-fine" d="M-160 483 C120 375 250 555 490 445 S850 325 1080 440 S1430 550 1760 395"/>
+          <path class="wave-line wave-line-teal wave-line-fine" d="M-160 513 C120 405 250 585 490 475 S850 355 1080 470 S1430 580 1760 425"/>
           <path class="wave-line wave-line-gold" d="M-140 557 C90 475 260 620 510 525 S850 408 1110 510 S1450 620 1770 474"/>
+          <path class="wave-line wave-line-sage wave-line-fine" d="M-140 540 C90 458 260 603 510 508 S850 391 1110 493 S1450 603 1770 457"/>
         </g>
-        <g class="wave-layer wave-layer-front">
+        <g class="wave-layer wave-layer-front" mask="url(#wave-mask)">
           <path class="wave-glow" d="M-170 382 C100 505 260 330 510 415 S840 525 1090 405 S1430 315 1770 435"/>
           <path class="wave-line wave-line-teal" d="M-170 382 C100 505 260 330 510 415 S840 525 1090 405 S1430 315 1770 435"/>
+          <path class="wave-line wave-line-gold wave-line-fine" d="M-170 365 C100 488 260 313 510 398 S840 508 1090 388 S1430 298 1770 418"/>
+          <path class="wave-line wave-line-sage wave-line-fine" d="M-170 399 C100 522 260 347 510 432 S840 542 1090 422 S1430 332 1770 452"/>
           <path class="wave-line wave-line-sage" d="M-160 624 C100 535 260 700 520 598 S870 498 1110 600 S1470 694 1780 572"/>
         </g>
         <g class="wave-particles">
-          <circle r="3.2" class="wave-particle particle-teal"><animateMotion dur="21s" repeatCount="indefinite" path="M-170 382 C100 505 260 330 510 415 S840 525 1090 405 S1430 315 1770 435"/></circle>
-          <circle r="2.3" class="wave-particle particle-sage"><animateMotion dur="27s" begin="-8s" repeatCount="indefinite" path="M-160 498 C120 390 250 570 490 460 S850 340 1080 455 S1430 565 1760 410"/></circle>
-          <circle r="2.6" class="wave-particle particle-gold"><animateMotion dur="24s" begin="-14s" repeatCount="indefinite" path="M-140 557 C90 475 260 620 510 525 S850 408 1110 510 S1450 620 1770 474"/></circle>
-          <circle r="1.8" class="wave-particle particle-teal"><animateMotion dur="31s" begin="-19s" repeatCount="indefinite" path="M-160 624 C100 535 260 700 520 598 S870 498 1110 600 S1470 694 1780 572"/></circle>
+          <circle r="3.2" class="wave-particle particle-teal"><animateMotion dur="21s" repeatCount="indefinite" path="M650 382 C830 505 900 330 1060 415 S1280 525 1420 405 S1580 315 1770 435"/></circle>
+          <circle r="2.3" class="wave-particle particle-sage"><animateMotion dur="27s" begin="-8s" repeatCount="indefinite" path="M620 498 C810 390 900 570 1080 460 S1320 340 1470 455 S1630 565 1760 410"/></circle>
+          <circle r="2.6" class="wave-particle particle-gold"><animateMotion dur="24s" begin="-14s" repeatCount="indefinite" path="M640 557 C820 475 940 620 1110 525 S1360 408 1510 510 S1650 620 1770 474"/></circle>
+          <circle r="1.8" class="wave-particle particle-teal"><animateMotion dur="31s" begin="-19s" repeatCount="indefinite" path="M620 624 C810 535 930 700 1120 598 S1370 498 1510 600 S1670 694 1780 572"/></circle>
           <circle cx="1190" cy="382" r="3.3" class="wave-twinkle"><animate attributeName="opacity" values=".18;.72;.24" dur="4.8s" repeatCount="indefinite"/></circle>
-          <circle cx="735" cy="455" r="2.4" class="wave-twinkle"><animate attributeName="opacity" values=".16;.58;.2" dur="6.2s" begin="-2s" repeatCount="indefinite"/></circle>
+          <circle cx="1050" cy="455" r="2.4" class="wave-twinkle"><animate attributeName="opacity" values=".16;.58;.2" dur="6.2s" begin="-2s" repeatCount="indefinite"/></circle>
+          <circle cx="240" cy="505" r="1.4" class="wave-sparkle"><animate attributeName="opacity" values=".12;.7;.2" dur="4.1s" repeatCount="indefinite"/></circle><circle cx="420" cy="565" r="1.1" class="wave-sparkle"><animate attributeName="opacity" values=".16;.64;.18" dur="5.7s" begin="-2s" repeatCount="indefinite"/></circle><circle cx="600" cy="600" r="1.6" class="wave-sparkle"><animate attributeName="opacity" values=".1;.8;.16" dur="4.7s" begin="-1s" repeatCount="indefinite"/></circle><circle cx="850" cy="540" r="1.2" class="wave-sparkle"><animate attributeName="opacity" values=".1;.7;.12" dur="6s" begin="-3s" repeatCount="indefinite"/></circle><circle cx="1040" cy="620" r="1.4" class="wave-sparkle"><animate attributeName="opacity" values=".1;.8;.12" dur="5s" begin="-4s" repeatCount="indefinite"/></circle><circle cx="1310" cy="570" r="1.1" class="wave-sparkle"><animate attributeName="opacity" values=".1;.65;.14" dur="4.6s" begin="-1.6s" repeatCount="indefinite"/></circle><circle cx="1480" cy="630" r="1.5" class="wave-sparkle"><animate attributeName="opacity" values=".12;.75;.14" dur="5.3s" begin="-2.8s" repeatCount="indefinite"/></circle><circle cx="1560" cy="470" r="1.1" class="wave-sparkle"><animate attributeName="opacity" values=".14;.72;.1" dur="4.3s" begin="-2s" repeatCount="indefinite"/></circle>
+          <g class="wave-leaf leaf-green"><path d="M0 0 C16 -6 32 -24 28 -44 C8 -42 -6 -24 0 0Z"/><path class="leaf-vein" d="M0 0 C8 -16 18 -30 28 -44"/><animateMotion dur="26s" begin="-6s" rotate="auto" repeatCount="indefinite" path="M680 300 C860 260 940 480 1110 420 S1430 310 1600 410"/></g>
+          <g class="wave-leaf leaf-gold"><path d="M0 0 C16 -6 32 -24 28 -44 C8 -42 -6 -24 0 0Z"/><path class="leaf-vein" d="M0 0 C8 -16 18 -30 28 -44"/><animateMotion dur="32s" begin="-19s" rotate="auto" repeatCount="indefinite" path="M680 560 C870 470 990 620 1170 540 S1450 470 1620 540"/></g>
+          <g class="wave-leaf leaf-green"><path d="M0 0 C16 -6 32 -24 28 -44 C8 -42 -6 -24 0 0Z"/><path class="leaf-vein" d="M0 0 C8 -16 18 -30 28 -44"/><animateMotion dur="29s" begin="-12s" rotate="auto" repeatCount="indefinite" path="M700 430 C870 520 970 350 1150 430 S1450 530 1630 390"/></g>
         </g>
       </svg>
       <div class="hero-grid wrap">
@@ -71,13 +84,15 @@
             <a class="button button-primary" href="https://wa.me/5565992987370?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Vim%20pela%20p%C3%A1gina%20Ess%C3%AAncia%20Hormonal%20e%20gostaria%20de%20agendar%20uma%20consulta%20para%20conversar%20sobre%20baixa%20libido%20e%20sa%C3%BAde%20hormonal." target="_blank" rel="noopener">Quero iniciar minha avaliação <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="#cuidado">Conheça nosso cuidado <span aria-hidden="true">↓</span></a>
           </div>
-          <div class="hero-proof"><span class="proof-icon" aria-hidden="true">✳</span><p><strong>Escuta atenta e cuidado individualizado</strong><br>Para compreender a mulher por inteiro.</p></div>
+          <div class="hero-proof"><span class="proof-icon" aria-hidden="true">✳</span><p><strong>Escuta atenta e cuidado individualizado</strong><br>Ciência que orienta, cuidado que acolhe. Para compreender a mulher por inteiro.</p></div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo-frame"><img src="assets/hero-dr-julio-bracos-cruzados-v2.webp" alt="Dr. Júlio Cesar, médico da equipe Essência Hormonal" fetchpriority="high"></div>
-          <div class="hero-stamp"><span class="stamp-spark" aria-hidden="true">✳</span><span>Ciência que orienta<br><strong>cuidado que acolhe</strong></span></div>
-          <div class="molecule molecule-hero" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
-          <span class="hero-caption">Uma conversa, sem pressa.</span>
+          <div class="hero-photo-frame"><img src="assets/dr-julio-recorte.webp" alt="Dr. Júlio Cesar, médico da equipe Essência Hormonal" fetchpriority="high"></div>
+          <svg class="portrait-leaves" viewBox="0 0 520 880" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <g class="portrait-leaf leaf-green"><g transform="translate(18 488) rotate(-24)"><path d="M0 48 C18 37 34 17 30 0 C10 2 -5 24 0 48Z"/><path class="leaf-vein" d="M0 48 C10 30 21 14 30 0"/></g><animateTransform attributeName="transform" type="translate" values="0 0;8 -12;0 0" dur="9s" repeatCount="indefinite"/></g>
+            <g class="portrait-leaf leaf-gold"><g transform="translate(478 344) rotate(48)"><path d="M0 48 C18 37 34 17 30 0 C10 2 -5 24 0 48Z"/><path class="leaf-vein" d="M0 48 C10 30 21 14 30 0"/></g><animateTransform attributeName="transform" type="translate" values="0 0;-8 -10;0 0" dur="11s" begin="-4s" repeatCount="indefinite"/></g>
+            <g class="portrait-leaf leaf-green"><g transform="translate(438 660) rotate(18)"><path d="M0 48 C18 37 34 17 30 0 C10 2 -5 24 0 48Z"/><path class="leaf-vein" d="M0 48 C10 30 21 14 30 0"/></g><animateTransform attributeName="transform" type="translate" values="0 0;10 -7;0 0" dur="13s" begin="-7s" repeatCount="indefinite"/></g>
+          </svg>
         </div>
       </div>
       <div class="hero-bottom wrap"><span>Donna MaryBel · Saúde integral da mulher</span><span class="scroll-cue"><span></span> Role para conhecer</span></div>

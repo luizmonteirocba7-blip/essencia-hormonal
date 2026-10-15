@@ -2,13 +2,16 @@
   var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   var reduceMotion = motionPreference.matches;
   var waveArt = document.querySelector('.hero-waves');
+  var portraitLeaves = document.querySelector('.portrait-leaves');
   var menuButton = document.querySelector('.menu-toggle');
   var menu = document.querySelector('#primary-nav');
 
   function syncWaveMotion() {
-    if (!waveArt || typeof waveArt.pauseAnimations !== 'function') return;
-    if (motionPreference.matches) waveArt.pauseAnimations();
-    else waveArt.unpauseAnimations();
+    [waveArt, portraitLeaves].forEach(function (art) {
+      if (!art || typeof art.pauseAnimations !== 'function') return;
+      if (motionPreference.matches) art.pauseAnimations();
+      else art.unpauseAnimations();
+    });
   }
 
   syncWaveMotion();
