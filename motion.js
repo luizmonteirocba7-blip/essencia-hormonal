@@ -7,6 +7,12 @@
   var menuButton = document.querySelector('.menu-toggle');
   var menu = document.querySelector('#primary-nav');
 
+  window.addEventListener('pageshow', function (event) {
+    var navigation = performance.getEntriesByType('navigation')[0];
+    if (event.persisted || window.location.hash || (navigation && navigation.type === 'back_forward')) return;
+    window.scrollTo(0, 0);
+  });
+
   function syncHeroVideo() {
     if (!heroVideo) return;
     if (motionPreference.matches || document.hidden) {
